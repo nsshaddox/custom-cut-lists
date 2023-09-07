@@ -6,7 +6,7 @@ const ToggleButton = require(path.join(__dirname, './src/renderer/components/Tog
 
 const header = [
   ["Q", "Label", "Depth", "Width", "Height", "",            ""],
-  ["2", "D-B2",  "24",  , "31.5",  "32.5",   "Description", ""]
+  ["2", "D-B2",  "24",  , "31.5",  "32.5",   "Desc", ""]
 ];
 
 const data = [

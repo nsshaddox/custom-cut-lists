@@ -1,12 +1,16 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
-// const electronReload = require('electron-reload');
 
-// // The path can be your project root, so that all changes in your app trigger a refresh
-// electronReload(path.join(__dirname), {
-//   electron: path.join(__dirname, '../../node_modules', '.bin', 'electron')
-// });
+
+/* Reload is not working!!
+const electronReload = require('electron-reload');
+
+// The path can be your project root, so that all changes in your app trigger a refresh
+electronReload(path.join(__dirname), {
+  electron: path.join(__dirname, '../../node_modules', '.bin', 'electron')
+});
+*/
 
 function createWindow () {
   // Create the browser window.
