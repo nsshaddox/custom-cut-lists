@@ -1,0 +1,30 @@
+
+/* Set the width and make text bold for all buttons */
+button {
+    width: 850px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+button .name {
+    color: red;
+}
+
+button .style {
+    color: green;
+}
+
+button .width, button .height, button .depth {
+    color: blue;
+}
+
+button .inner-mat {
+    color: purple;
+}
+
+button .outer-mat {
+    color: brown;
+}
