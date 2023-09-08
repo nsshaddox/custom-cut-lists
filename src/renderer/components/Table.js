@@ -3,37 +3,31 @@ const Handsontable = require('handsontable').default;
 class Table {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
-    this.header = [];
-    this.data = [];
+    this.cabinetOverview = [];
+    this.components = [];
+    this.hardware = [];
     this.combinedData = [];
     this.hot = null;
   }
 
-  loadData(header, data) {
-    this.header = header;
-    this.data = data;
-    this.combinedData = this.header.concat(this.data);
+  loadData(cabinetOverview, components, hardware) {
+    this.cabinetOverview = cabinetOverview;
+    this.components = components;
+    this.hardware = hardware;
+    this.combinedData = this.cabinetOverview.concat(this.components).concat(this.hardware);
   }
 
   render() {
+    console.log(this.combinedData);
     this.hot = new Handsontable(this.container, {
       data: this.combinedData,
-      rowHeaders: false,
-      colHeaders: false,
+      rowHeaders: true,
+      colHeaders: true,
+      columns: [{},{},{},{},{},{},{}], // 7 columns
+      colWidths: [120, 150, 50, 50, 50, 120, 250],
       licenseKey: 'non-commercial-and-evaluation',
-      cells: function(row, col) {
-        const cellProperties = {};
-        if(row === 0 || row === data.length) {
-          cellProperties.renderer = function(instance, td) {
-            Handsontable.renderers.TextRenderer.apply(this, arguments);
-            td.style.backgroundColor = "#ccfff2";
-          };
-        }
-        return cellProperties;
-      }
     });
   }
-
 }
 
 module.exports = Table;

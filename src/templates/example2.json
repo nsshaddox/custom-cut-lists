@@ -1,0 +1,61 @@
+{
+    "Cabinet": {
+      "Name": "Double Door",
+      "Style": "Euro",
+      "Width": 16,
+      "Depth": 24,
+      "Height": 30,
+      "Description": "Kitchen Base Cabinet",
+      "InnerMaterial": "Melamine",
+      "OuterMaterial": "Oak",
+      "TopPanel": {
+        "Quantity": 1,
+        "Depth": 24,
+        "Length": 20,
+        "Thickness": 0.75,
+        "Material": "Melamine",
+        "Notes": "Rounded edges"
+      },
+      "BottomPanel": {
+        "Quantity": 1,
+        "Depth": 24,
+        "Width": 14.5,
+        "Thickness": 0.75,
+        "Material": "Melamine",
+        "Notes": ""
+      },
+      "SidePanels": {
+        "Quantity": 2,
+        "Depth": 24,
+        "Height": 30.0,
+        "Thickness": 0.75,
+        "Material": "Melamine",
+        "Notes": ""
+      },
+      "BackPanel": {
+        "Quantity": 1,
+        "Width": 15.5,
+        "Height": 29.5,
+        "Thickness": 0.25,
+        "Material": "Melamine",
+        "Notes": ""
+      },
+      "Shelves": {
+        "Quantity": 2,
+        "Depth": 23,
+        "Width": 14.5,
+        "Thickness": 0.75,
+        "Material": "Melamine",
+        "Notes": "Adjustable height"
+      },
+      "DoorPanels": {
+        "Quantity": 2,
+        "Width": 7.875,
+        "Height": 29.75,
+        "Thickness": 0.75,
+        "Material": "Oak",
+        "Notes": "Euro Style"
+      }
+    }
+  }
+  
