@@ -21,10 +21,26 @@ class Table {
     console.log(this.combinedData);
     this.hot = new Handsontable(this.container, {
       data: this.combinedData,
-      rowHeaders: true,
-      colHeaders: true,
-      columns: [{},{},{},{},{},{},{}], // 7 columns
-      colWidths: [120, 150, 50, 50, 50, 120, 250],
+      rowHeaders: false,
+      colHeaders: ["Quantity", "Description", "Width", "Length", "Thick", "Material", "Notes"],
+      columns: [
+        {className: 'htRight'},
+        {className: 'htLeft'},
+        {className: 'htRight'},
+        {className: 'htRight'},
+        {className: 'htRight'},
+        {className: 'htLeft'},
+        {className: 'htLeft'}
+      ], // 7 columns
+
+      // // Bold the first row
+      // cells: function(row, col) {
+      //   var cellProperties = {};
+      //   if (row === 0) {
+      //     cellProperties.renderer = boldRenderer;
+      //   }
+      // },
+      colWidths: [60, 150, 60, 60, 45, 150, 325],
       licenseKey: 'non-commercial-and-evaluation',
     });
   }

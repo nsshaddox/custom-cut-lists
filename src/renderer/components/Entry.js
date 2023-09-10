@@ -3,11 +3,15 @@ const Table = require(path.join(__dirname, './Table'));
 const ToggleButton = require(path.join(__dirname, './ToggleButton'));
 
 class Entry {
-  constructor() {
+  constructor(tableName) {
+    this.tableName = tableName; //needs to be unique
     const cabinetOverview = [
         ["Cabinet Overview"],
         ["Name", "Cabinet A"],
         ["Style", "Modern"],
+        ["Width", 30],
+        ["Depth", 20],
+        ["Height", 35]
         ["Dimensions(W,D,H)", 30, 20, 35],
         ["Purpose", "Kitchen Base Cabinet"],
         ["Material", "Oak, Plywood backing"],
@@ -15,7 +19,7 @@ class Entry {
       ];
       
       const componentsBreakdown = [
-        ["Quantity", "Description", "Width (in)", "Depth (in)", "Height (in)", "Material", "Notes"],
+        ["Quantity", "Description", "Width", "Depth", "Height", "Material", "Notes"],
         [1, "Top Panel", 30, 20, 0.75, "Oak", "Rounded edges"],
         [1, "Bottom Panel", 30, 20, 0.75, "Oak", ""],
         [2, "Side Panels", 20, 0.75, 35, "Oak", ""],
@@ -37,9 +41,9 @@ class Entry {
       ];
     
     const parentElement = document.body;
-    const toggleButton = new ToggleButton('toggleButton', 'partsTable', parentElement);
+    const toggleButton = new ToggleButton('toggleButton', this.tableName, parentElement);
     
-    const table = new Table('partsTable');
+    const table = new Table(this.tableName);
     table.loadData(cabinetOverview, componentsBreakdown, hardwareDetails);
     table.render();
   }
