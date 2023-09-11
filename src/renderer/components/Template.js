@@ -21,7 +21,8 @@ class Template {
       this.formatedData = this.formatData(this.jsonData);
       
       // create button
-      const toggleButton = new ToggleButton('toggleButton', this.jsonData.Cabinet.Name, document.body);
+      const toggleButton = new ToggleButton('toggleButton', this.jsonData, document.body);
+      //toggleButton.formatInnerHtml(this.jsonData);
 
       // create table
       const table = new Table(this.jsonData.Cabinet.Name)
