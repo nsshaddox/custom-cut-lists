@@ -22,15 +22,12 @@ class Template {
       
       // create button
       const toggleButton = new ToggleButton('toggleButton', this.jsonData, document.body);
-      //toggleButton.formatInnerHtml(this.jsonData);
 
       // create table
       const table = new Table(this.jsonData.Cabinet.Name)
-      table.loadData(this.formatedData, [], []);
-      table.render();
+      table.loadData(this.formatedData);
+      table.render(this.jsonData);
       
-
-      //table.loadTable()
     });
     
   }

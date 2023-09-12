@@ -2,6 +2,7 @@
   "Cabinet": {
     "Name": "Sink",
     "Style": "Euro",
+    "Quantity": 1,
     "Width": 36,
     "Depth": 24,
     "Height": 30,

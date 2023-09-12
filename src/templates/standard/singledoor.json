@@ -2,6 +2,7 @@
   "Cabinet": {
     "Name": "Single Door",
     "Style": "Euro",
+    "Quantity": 1,
     "Width": 16,
     "Depth": 24,
     "Height": 30,

@@ -1,26 +1,23 @@
 const Handsontable = require('handsontable').default;
+// import Handsontable from 'handsontable';
+// import 'handsontable/dist/handsontable.full.min.css';
 
 class Table {
   constructor(containerId) {
     this.container = document.getElementById(containerId);
-    this.cabinetOverview = [];
     this.components = [];
-    this.hardware = [];
-    this.combinedData = [];
     this.hot = null;
   }
 
-  loadData(cabinetOverview, components, hardware) {
-    this.cabinetOverview = cabinetOverview;
-    this.components = components;
-    this.hardware = hardware;
-    this.combinedData = this.cabinetOverview.concat(this.components).concat(this.hardware);
+  loadData(data) {
+    this.components = data;
   }
 
-  render() {
-    console.log(this.combinedData);
+  render(jsonData) {
+    //console.log(this.components);
+    console.log(jsonData.Cabinet.OuterMaterial),
     this.hot = new Handsontable(this.container, {
-      data: this.combinedData,
+      data: this.components,
       rowHeaders: false,
       colHeaders: ["Quantity", "Description", "Width", "Length", "Thick", "Material", "Notes"],
       columns: [
@@ -32,14 +29,6 @@ class Table {
         {className: 'htLeft'},
         {className: 'htLeft'}
       ], // 7 columns
-
-      // // Bold the first row
-      // cells: function(row, col) {
-      //   var cellProperties = {};
-      //   if (row === 0) {
-      //     cellProperties.renderer = boldRenderer;
-      //   }
-      // },
       colWidths: [60, 150, 60, 60, 45, 150, 325],
       licenseKey: 'non-commercial-and-evaluation',
     });
