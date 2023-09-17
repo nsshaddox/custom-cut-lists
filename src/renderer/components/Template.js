@@ -1,39 +1,26 @@
-const fs = require('fs');
 const path = require('path');
 const Table = require(path.join(__dirname, './Table'));
 const ToggleButton = require(path.join(__dirname, './ToggleButton'));
 
 class Template {
-  constructor(jsonFilePath) {
-    this.dataMap = new Map();
-    this.tableData = {};
-    this.jsonFilePath = jsonFilePath; //needs to be unique
-    fs.readFile(this.jsonFilePath, 'utf8', (err, data) => {
-      if (err) {
-        console.error('Error reading the file:', err);
-        return;
-      }
+  constructor(jsonData, parent) {
+    this.jsonData = jsonData;
 
-      // jsonData contains the json obect now
-      this.jsonData = JSON.parse(data);
-
-      // create a list (of lists) to load into the table.
-      this.formatedData = this.formatData(this.jsonData);
+    // Convert jsonData into a format the table needs
+    this.formatedData = this.formatDataForTable(this.jsonData);
       
-      // create button
-      const toggleButton = new ToggleButton('toggleButton', this.jsonData, document.body);
+    // create button
+    const toggleButton = new ToggleButton('toggleButton', this.jsonData, parent);
 
-      // create table
-      const table = new Table(this.jsonData.Cabinet.Name)
-      table.loadData(this.formatedData);
-      table.render(this.jsonData);
+    // create table
+    const table = new Table(this.jsonData.Cabinet.Name)
+    table.loadData(this.formatedData);
+    table.render(this.jsonData);
       
-    });
-    
   }
 
   // Take the data from the json file and format into something that HandsOnTable can use.
-  formatData(data) {
+  formatDataForTable(data) {
     // default header
     const cabinetParts = [];
       
