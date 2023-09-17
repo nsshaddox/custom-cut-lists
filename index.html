@@ -5,16 +5,32 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./src/styles/components/ButtonText.css" rel="stylesheet">
+    <link href="./src/styles/components/tabs.css" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/handsontable/dist/handsontable.full.css">
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
-    <br>
+    <div id="tab-container">
+      <ul class="tabs">
+        <li class="active">Project</li>
+        <li>Templates</li>
+        <li>Optimizer</li>
+      </ul>
+      <div class="tab-content">
+        <div id="project">
+          <!-- Content of Project tab -->
+          Project Content
+        </div>
+        <div id="templates">
+          <!-- Content of Templates tab -->
+          Templates Content
+        </div>
+        <div id="optimizer">
+          <!-- Content of Optimizer tab -->
+          Optimizer Content
+        </div>
+      </div>
+    </div>
     
     <!-- You can also require other files to run in this process -->
     <script src="./src/renderer/renderer.js"></script>

@@ -1,0 +1,20 @@
+/* Example CSS for the tabs */
+#tab-container .tabs li {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f2f2f2;
+  }
+  
+  #tab-container .tabs li.active {
+    background-color: #a9a9a9;
+  }
+  
+  /* Example CSS for the content area */
+  #tab-container .tab-content > div {
+    display: none;
+  }
+  
+  #tab-container .tab-content > div.active {
+    display: block;
+  }

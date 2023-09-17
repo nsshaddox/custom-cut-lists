@@ -2,6 +2,7 @@ class ToggleButton {
   constructor(buttonId, data, parentElement) {
     this.button = document.createElement('button');
     this.button.id = buttonId;
+    this.button.className = "button";
     this.button.innerHTML = `
     <b>
     ${data.Cabinet.Quantity} ||

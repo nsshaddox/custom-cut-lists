@@ -3,11 +3,7 @@ const path = require('path');
 const Template = require(path.join(__dirname, './src/renderer/components/Template'));
 
 const templatesFolder = path.join(__dirname, './src/templates/standard');
-
-const parent = document.createElement('div');
-parent.id = 'templates'
-document.body.append(parent);
-
+const projectTab = document.getElementById('project');
 const templateElements = [];
 const templates = [];
 
@@ -22,18 +18,16 @@ fs.readdir(templatesFolder, (err, files) => {
   files.forEach((file) => {
     templateElements.push(document.createElement('div'));
     templateElements[i].id = file;
-    parent.append(templateElements[i]);
-    // templateElements[i].append(document.createElement('div'));
+    projectTab.append(templateElements[i]);
     i++;
   });
 
   console.log(templateElements);
 
   // Loop through each file
-  let j = 0;
+  i = 0;
   files.forEach((file) => {
-    const templateElement = templateElements[j];
-
+    const templateElement = templateElements[i++];
 
     // Read the contents of the file as a JSON object
     fs.readFile(path.join(templatesFolder, file), 'utf8', (err, data) => {
@@ -44,11 +38,6 @@ fs.readdir(templatesFolder, (err, files) => {
 
       // Parse the JSON object
       const templateObject = JSON.parse(data);
-      // console.log(templateObject);
-
-      // Create an HTML element for the template to live in
-      // templateElement = document.createElement('div');
-      // templateElements[i].append(document.createElement('div'));
 
       // // Create a new template object
       const template = new Template(templateObject, templateElement);
@@ -58,11 +47,33 @@ fs.readdir(templatesFolder, (err, files) => {
 
       // Check if all templates have been created
       if (templates.length === files.length) {
-        // You can now use the templates array to do further processing
         console.log('Templates:', templates);
       }
     });
-    j++;
+  });
+});
+
+// Get the tab elements
+const tabElements = document.querySelectorAll("#tab-container .tabs li");
+const contentElements = document.querySelectorAll("#tab-container .tab-content > div");
+
+// Attach event listeners to the tabs
+tabElements.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    // Remove active classes from all tabs and content
+    tabElements.forEach((tab) => tab.classList.remove("active"));
+    contentElements.forEach((content) => content.classList.remove("active"));
+
+    // Add active class to the selected tab and content
+    tab.classList.add("active");
+    contentElements[index].classList.add("active");
+  });
+
+  // Set the main tab as active on page load
+  window.addEventListener("load", () => {
+    // Add active class to the main tab and its content
+    tabElements[0].classList.add("active");
+    contentElements[0].classList.add("active");
   });
 });
 

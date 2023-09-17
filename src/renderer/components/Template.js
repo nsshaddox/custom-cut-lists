@@ -1,6 +1,5 @@
-const path = require('path');
-const Table = require(path.join(__dirname, './Table'));
-const ToggleButton = require(path.join(__dirname, './ToggleButton'));
+const Table = require('./Table');
+const ToggleButton = require('./ToggleButton');
 
 class Template {
   constructor(jsonData, parent) {
