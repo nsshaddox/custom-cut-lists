@@ -1,5 +1,8 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-/* Set the width and make text bold for all buttons */
 button {
     width: 850px;
     font-weight: bold;

@@ -1,0 +1,77 @@
+{
+  "Cabinet": {
+    "Name": "Sink w/o back",
+    "Style": "Euro",
+    "Quantity": 1,
+    "Width": 36,
+    "Depth": 24,
+    "Height": 30,
+    "Description": "Kitchen Base Cabinet",
+    "InnerMaterial": "Melamine",
+    "OuterMaterial": "Oak",
+    "Webs": {
+      "PartName": "Webs",
+      "Quantity": 1,
+      "Width": 8,
+      "Length": 34.5,
+      "Thickness": 0.75,
+      "Material": "Melamine",
+      "Notes": "Split @ 96mm"
+    },
+    "TopPanel": {
+      "PartName": "Top Panel",
+      "Quantity": 0,
+      "Width": 24,
+      "Length": 34.5,
+      "Thickness": 0.75,
+      "Material": "Melamine",
+      "Notes": "Rounded edges"
+    },
+    "BottomPanel": {
+      "PartName": "Bottom Panel",
+      "Quantity": 1,
+      "Width": 24,
+      "Length": 34.5,
+      "Thickness": 0.75,
+      "Material": "Melamine",
+      "Notes": ""
+    },
+    "SidePanels": {
+      "PartName": "Side Panel",
+      "Quantity": 2,
+      "Width": 24,
+      "Length": 30.0,
+      "Thickness": 0.75,
+      "Material": "Melamine",
+      "Notes": ""
+    },
+    "BackPanel": {
+      "PartName": "Back Panel",
+      "Quantity": 0,
+      "Width": 35.5,
+      "Length": 29.5,
+      "Thickness": 0.25,
+      "Material": "Melamine",
+      "Notes": ""
+    },
+    "Shelves": {
+      "PartName": "Shelves",
+      "Quantity": 0,
+      "Width": 23,
+      "Length": 34.25,
+      "Thickness": 0.75,
+      "Material": "Melamine",
+      "Notes": "Adjustable height"
+    },
+    "DoorPanels": {
+      "PartName": "Door Panels",
+      "Quantity": 2,
+      "Width": 17.75,
+      "Length": 29.75,
+      "Thickness": 0.75,
+      "Material": "Oak",
+      "Notes": "Euro Style"
+    }
+  }
+}
+  
